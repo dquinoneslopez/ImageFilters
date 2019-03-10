@@ -2,18 +2,14 @@
 
 require 'classes/picture.php';
 
-//=================================================
-// Displays an array containing Picture objects
-// - $arr: array with the objects 
-//=================================================
-
 /**
- * displayObjectsArray
+ * displayObjectsArray: Displays an array containing Picture objects
  *
- * @param  mixed $arr
+ * @param  array $arr Array with the objects 
  *
  * @return void
  */
+
 function displayObjectsArray($arr){
 
     foreach ($arr as $picture) {
@@ -24,19 +20,14 @@ function displayObjectsArray($arr){
 
 }
 
-//=================================================
-// Displays an array containing Picture objects
-// - $arr: asociative array
-// - $output: objects array
-//=================================================
-
 /**
- * createObjectsArray
+ * createObjectsArray: Displays an array containing Picture objects
  *
- * @param  mixed $arr
+ * @param  array $arr Asociative array
  *
- * @return void
+ * @return array $output Objects array
  */
+
 function createObjectsArray($arr){
 
     $output = array();
@@ -51,21 +42,15 @@ function createObjectsArray($arr){
 
 }
 
-//==========================================================
-// "Applies" the corresponding filters to a picture 
-// - $arr1: array with the original pictures
-// - $arr2: array with the pictures's filters to modify
-// - $output: objects array with the pictures's new filters
-//==========================================================
-
 /**
- * applyFilters
+ * applyFilters: "Applies" the corresponding filters to a picture 
  *
- * @param  mixed $arr1
- * @param  mixed $arr2
+ * @param  array $arr1 Array with the original pictures
+ * @param  array $arr2 Array with the pictures's filters to modify
  *
- * @return void
+ * @return array $output Array with the picture's new filters
  */
+
 function applyFilters($arr1, $arr2){
 
     $output = array();

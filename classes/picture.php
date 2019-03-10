@@ -1,27 +1,23 @@
 <?php
 
-//===============================================================================
-// Picture class
-// - $file: name of the picture (should be a path to the actual file, but we 
-//          use just the name to simplify in this case) 
-//
-// * We could add more attributes to the class, such as size, type, etc. with 
-//   its corresponding methods, but they are't really necessary for this exercise
-//================================================================================
-
+/**
+ * Picture class
+ * 
+ * @var string $file Name of the picture (should be a path to the actual file, but we 
+ *            use just the name to simplify in this case) 
+ * @var array $filters Array with the filters applied to the picture
+ * 
+ * - We could add more attributes to the class, such as size, type, etc. with 
+ *   its corresponding methods, but they are't really necessary for this exercise.
+ */
 class Picture {
     private $file;
     private $filters = array();
 
-    //=================================================
-    // Constructor
-    // - $arr: asociative array with the picture data
-    //=================================================
-
     /**
      * __construct
      *
-     * @param  mixed $arr
+     * @param  array $arr Asociative array with the picture data
      *
      * @return void
      */
@@ -39,8 +35,9 @@ class Picture {
     /**
      * getFileName
      *
-     * @return void
+     * @return string File name
      */
+
     public function getFileName(){
 
         return $this->file;
@@ -50,30 +47,26 @@ class Picture {
     /**
      * getFilters
      *
-     * @return void
+     * @return array Array with the filters applied to the picture
      */
+
     public function getFilters(){
 
         return $this->filters;
 
     }
 
-    //=================================================
-    // SET METHODS
-    //=================================================
-    
-    //====================================================
-    // Set the object's filters, checking its values (this 
-    // should be done also on the client side)
-    // - $filters: asociative array with the new filters
-    //====================================================
     /**
-     * setFilters
+     * setFilters: 
+     * 
+     * Set the object's filters, checking its values (this 
+     * should be done also on the client side)
      *
-     * @param  mixed $filters
+     * @param  array $filters Asociative array with the new filters
      *
      * @return void
      */
+
     public function setFilters($filters){
 
         foreach ($filters as $key => $value) {
@@ -132,18 +125,15 @@ class Picture {
 
     }
 
-    //=======================================================
-    // Transforms the filters asociative array into a string
-    // - return: the string representing the filters array,
-    //           it will be an empty array if there are no
-    //           filters.
-    //=======================================================
-
     /**
      * filtersToString
+     * 
+     * Transforms the filters asociative array into a string
      *
-     * @return void
+     * @return string The string representing the filters array, 
+     *                it will be an empty array if there are no filters.
      */
+
     public function filtersToString(){
 
         if (count($this->getFilters()) > 0) {
@@ -159,16 +149,13 @@ class Picture {
         return "";
 
     }
-    
-    //==============================================
-    // Transforms the object into a string
-    // - return: the string representing the object
-    //==============================================
 
     /**
      * toString
+     * 
+     * Transforms the object into a string
      *
-     * @return void
+     * @return string The string representing the object
      */
     public function toString(){
 
